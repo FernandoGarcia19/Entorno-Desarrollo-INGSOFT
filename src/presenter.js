@@ -1,16 +1,26 @@
-import saludar from "./saludador";
+import sumar from "./sumador";
+import multiplicar from "./multiplicador";
 
-const form = document.querySelector("#form-saludator");
-const nombre = document.querySelector("#input-nombre");
-const div = document.querySelector("#resultado");
-const button = document.querySelector("#saludar-button")
-const gender = document.querySelector("#gender");
-const language = document.querySelector("#language");
+const first = document.querySelector("#primer-numero");
+const second = document.querySelector("#segundo-numero");
+const sumarButton = document.querySelector("#sumar-button");
+const multiplicarButton = document.querySelector("#multiplicar-button");
+const div = document.querySelector("#resultado-div");
 
-button.addEventListener("click", (event) => {
+sumarButton.addEventListener("click", (event) => {
   event.preventDefault();
-  result = saludar(nombre.value, gender.value, language.value);
-  div.innerHTML = "<p>" + result  + "</p>";
+
+  const firstNumber = Number.parseInt(first.value);
+  const secondNumber = Number.parseInt(second.value);
+
+  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
 });
 
+multiplicarButton.addEventListener("click", (event) => {
+  event.preventDefault();
 
+  const firstNumber = Number.parseInt(first.value);
+  const secondNumber = Number.parseInt(second.value);
+
+  div.innerHTML = "<p>" + multiplicar(firstNumber, secondNumber) + "</p>";
+});
